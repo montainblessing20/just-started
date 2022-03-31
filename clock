@@ -1,0 +1,36 @@
+#importing the necessary libraries
+
+import time
+from tkinter import *
+from time import *
+
+#defining a function to control the time
+
+def update():
+    time_show = strftime("%I:%M:%S")
+    time_label.config(text=time_show)
+
+    day_show = strftime("%A")
+    day_label.config(text=day_show)
+
+    date_show = strftime("%B %d %Y")
+    date_label.config(text=date_show)
+
+    time_label.after(1,update)
+
+#creating the window
+window = Tk()
+
+time_label = Label(window, font=('consolas', 50, 'bold'), bg='black', fg='blue')
+time_label.pack()
+
+day_label = Label(window, font=('Arial', 35), fg='purple')
+day_label.pack()
+
+date_label = Label(window, font=('San serif', 25), bg='grey', fg='orange')
+date_label.pack()
+
+update()
+
+window.mainloop()
+#thanks
